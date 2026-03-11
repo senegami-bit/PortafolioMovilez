@@ -1,0 +1,65 @@
+import 'dart:io';
+
+class Nodo{
+  int dato;
+  Nodo? siguiente;
+
+  Nodo(this.dato);
+}
+
+(Nodo?, Nodo?) push(Nodo? front, Nodo? back, int dato){
+  Nodo nuevoNodo =Nodo(dato);
+  if(back != null){
+    back.siguiente = nuevoNodo;
+  }
+  back = nuevoNodo;
+  front ??= nuevoNodo;
+  print('\nElemento $dato agregado a la cola');
+  return (front, back);
+}
+
+(Nodo?, int) lollipop(Nodo? front){
+  Nodo? aux = front;
+  int n = aux!.dato;
+  front = aux.siguiente;
+  aux = null;
+  return(front, n);
+}
+
+Nodo? show(Nodo? front){
+  Nodo? aux = front;
+  while(aux != null){
+    print(aux.dato);
+    aux = aux.siguiente;
+  }
+  return front;
+}
+
+Nodo? borrar(Nodo? front){
+  var (nuevaCola, valor) = lollipop(front);
+  front = nuevaCola;
+  print('\nEl elemento $valor fue sacado de la cola');
+  return front;
+}
+
+main(){
+  Nodo? back;
+  Nodo? front;
+  int u;
+
+  do {
+    stdout.writeln('Ingrese el size de la cola: ');
+    u = int.parse(stdin.readLineSync()!);
+  } while (u <= 0);
+
+  for(int i = 0; i < u; i++){
+    stdout.writeln('\nIngrese el elemento de la cola ${i+1}');
+    int n = int.parse(stdin.readLineSync()!);
+    var (newFront, newBack) = push(front, back, n);
+    front = newFront;
+    back = newBack;
+  }
+  show(front);
+  front = borrar(front);
+  show(front);
+}
