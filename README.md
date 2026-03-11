@@ -164,3 +164,26 @@ Contiene una serie de validaciones iniciales (números menores o iguales a 1, el
 Luego, itera en un bucle for desde 3 hasta el numero, incrementando de 2 en 2 (solo números impares). Si encuentra un divisor exacto (numero % i == 0), imprime "NO ES UN PRIMO" y la función termina con return.
 
 Nota importante: El código tiene un error de lógica. Si el número no es divisible por el primer impar del bucle, inmediatamente imprime "es un primo" y sale, lo cual es incorrecto. Debería recorrer todas las iteraciones del bucle y solo declarar que es primo si ninguna división fue exacta. La lógica de validación de números pares también es redundante después del bucle.
+
+
+
+20_factorial.dart: Calcula el factorial de un número ingresado por el usuario usando un ciclo for.
+
+20b_factorial.dart: Calcula el factorial de un número usando una función independiente que recibe el valor y retorna el resultado.
+
+20c_factorial.dart: Calcula el factorial de un número de forma recursiva (la función se llama a sí misma).
+
+21_suma.dart: Suma recursivamente un número y todos sus precedentes (ejemplo: 5 → 5+4+3+2+1).
+
+22_stack.dart: Implementa una pila (stack) usando nodos enlazados: permite insertar, sacar y mostrar elementos.
+
+23_queue.dart: Implementa una cola (queue) usando nodos enlazados: permite agregar, quitar y mostrar elementos.
+
+24_try.dart: Calcula el factorial con manejo de excepciones para números negativos y errores de entrada.
+
+25_prpuesta.dart: Simula un sistema de tickets usando una cola para tickets pendientes y una pila para deshacer acciones.
+
+
+
+
+
